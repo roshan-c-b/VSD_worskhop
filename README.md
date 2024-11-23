@@ -58,6 +58,7 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
 
 
   **6. Command to View the Assembly Code**<br />
+  same command as step-4 but replacing O1 with Ofast.
   ```
   $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o filename.o filename.c
   $ riscv64-unknown-elf-objdump -d filename.o | less 

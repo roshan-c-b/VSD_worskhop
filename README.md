@@ -8,7 +8,7 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
 ***
 
 <details>
-<summary><b>Task 1:</b> Sample C program with GNU GCC and RISC GCC compiler and understanding the assembly code. </summary><br />
+<summary><b>Task 1:</b> Execute C program with GNU GCC and RISC-V GCC compiler and understand the assembly code. </summary><br />
   
 
   **1.Command for Installing Leafpad**<br />

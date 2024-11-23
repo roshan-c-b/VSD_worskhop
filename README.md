@@ -31,12 +31,15 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   $ ./a.out
   ```
   ![git-2](https://github.com/user-attachments/assets/8fc91ce4-b25e-411c-bc89-cb6063bc6f75)
+
+  
   **4.Command for Compiling the Code using RISCV Compiler**<br />
   ```
   $ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o filename.o filename.c
   $ ls -ltr filename.o
   ```
   ![install risc-compiler](https://github.com/user-attachments/assets/51ba5cb7-bf72-4d54-a8a4-c232be45d780)
+  
 
   **5.Command to View the Assembly Code**<br />
   ```
@@ -50,8 +53,9 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   To calculate the number of instructions:-
   101b0 - 10184 = 2c     //Hex format
   2c/4 = b = 11          //address are incremented by 4
+  ```
 
-  ``` 
+
   **6. Command to View the Assembly Code**<br />
   ```
   $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o filename.o filename.c

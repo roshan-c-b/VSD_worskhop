@@ -71,7 +71,6 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   Calculating number of instructions:-
   100dc - 100b0 = 2c      // Hex format
   2c/4 = b = 11           // address are incremented by 4
-
   ```
   Same number of instructions as the command in step-4 (with O1).
   

@@ -20,6 +20,7 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   ```
   $ cd
   $ leafpad filename.c &
+  Enter the C Code in the leafpad.
   ```
   ![git-1](https://github.com/user-attachments/assets/882a740c-66b9-4aa8-9a4b-b54c03f15fb2)
 

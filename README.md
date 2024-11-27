@@ -76,6 +76,36 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   
 </details>
 
+<details>
+<summary><b>Task 2:</b> Performing SPIKE simulation and Debugging the C code Using spike  </summary>   
+<br>
+ 
+
+![Task-2-1](https://github.com/user-attachments/assets/9fa16c2f-6699-4426-bc1a-f68c3153afd5)
+
+Debugging the Assembly Language Program using ``spike -d pk sum1ton.o`` in a new terminal window.
+
+Assembly Language Program :
+
+![Task-2-2](https://github.com/user-attachments/assets/cdf273bd-d94d-4b1f-92af-af6bbfb16c7d)
+
+Debugger:
+
+![Task-2-3](https://github.com/user-attachments/assets/663ef5cf-651f-44a8-b6e5-33ecd90bb569)
+
+
+In Debugger we Debug the Assembly Language by following the each instruction .At the address of `100b4` the register value of stack point `sp` is `0x0000003ffffffb50` and after completion of instruction`sp, sp, -16` ,the new value of register stack pointer is `0x0000003ffffffb40`
+
+
+![Task-2-4](https://github.com/user-attachments/assets/e864276a-1242-49ab-bfc0-9db3db0755ce)
+![Task-2-4(calc)](https://github.com/user-attachments/assets/2056bdb2-7875-4978-aeb6-441cf3594ab9)
+
+After  finishing all the instructions in Assembly language ,At the address of `100d8` it returns the value of sum.
+
+Application:
+--
+
+</details>
 ***
 
 

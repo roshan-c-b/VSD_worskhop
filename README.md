@@ -84,9 +84,9 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
 ![Task-2-1](https://github.com/user-attachments/assets/9fa16c2f-6699-4426-bc1a-f68c3153afd5)
 
 Debugging using the command
-
+```
 $spike -d pk sum1ton.o
-
+```
 Assembly Language :-
 
 ![Task-2-2](https://github.com/user-attachments/assets/cdf273bd-d94d-4b1f-92af-af6bbfb16c7d)
@@ -109,9 +109,10 @@ At address '100d8' the value of sum of the program is returned (= 55).
 
 LUI (LOAD UPPER IMMEDIATE):
 This instruction is a key feature in RISC-V architecture.. It is used to load a 20-bit immediate value into the upper 20 bits of a register, while setting the lower 12 bits to zero.
+
 Format - LUI rd, immediate [ rd- destination register, immediate- 20-bit immediate value to be loaded]
 The 20- bit immediate value is shifted left by 12 bits(appended with 12 zeros). 
-The lower 12 bits of the destination register are set to zero. The resulting 32-bit value is stored in rd.
+The lower 12 bits of the destination register are set to zero. 
 
 ADDI
 This instruction is a common operation in RISC-V architecture.It performs an addition between a register and a sign-extended immediate value, storing the result in a destination register.

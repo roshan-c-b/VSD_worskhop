@@ -98,13 +98,13 @@ SPIKE is a RISC-V simulator. In this task, we will check the output of the previ
 
 3. Debugger:
 
-![Task-2-3](https://github.com/user-attachments/assets/663ef5cf-651f-44a8-b6e5-33ecd90bb569)
+   ![Task-2-3](https://github.com/user-attachments/assets/663ef5cf-651f-44a8-b6e5-33ecd90bb569)
 
-![Task-2-4](https://github.com/user-attachments/assets/e864276a-1242-49ab-bfc0-9db3db0755ce)
+   ![Task-2-4](https://github.com/user-attachments/assets/e864276a-1242-49ab-bfc0-9db3db0755ce)
 
 At address `100b4` the value of stack point before and after completion of the instruction is:
-- `sp` = `0x0000003ffffffb50`
-- `sp, sp, -16` = `0x0000003ffffffb40`
+   - `sp` = `0x0000003ffffffb50`
+   - `sp, sp, -16` = `0x0000003ffffffb40`
 
 ![Task-2-4(calc)](https://github.com/user-attachments/assets/2056bdb2-7875-4978-aeb6-441cf3594ab9)
 
@@ -118,11 +118,6 @@ At address `100d8`, the program returns the sum = `55`.
 
 ## About Instructions Used:
 ...
-
-
-
-## About instructions used:
-
 LUI (LOAD UPPER IMMEDIATE):
 This instruction is a key feature in RISC-V architecture. It is used to load a 20-bit immediate value into the upper 20 bits of a register, while setting the lower 12 bits to zero.
 
@@ -134,7 +129,6 @@ ADDI
 This instruction is a common operation in RISC-V architecture.It performs an addition between a register and a sign-extended immediate value, storing the result in a destination register.
 
 Format- ADDI rd, rs1, immediate (rd- destination register, rs- source register, immediate- the immediate value to be added).
-
 
 --
 Application CODE:
@@ -160,6 +154,90 @@ Now, compile with RISC-V GCC command. (Both -O1 and -Ofast).
 2.Assembly Program for the C code:
 
 ![Task-2-3(new code- assembly)](https://github.com/user-attachments/assets/2a1d928f-f2b2-45e8-a325-b4772ad98eba)
+
+# Assembly Instruction Breakdown:
+---
+
+### **1. `lui a0,0x21`**
+- Load the upper immediate value `0x21` into the `a0` register.  
+- This sets up the upper 20 bits of a memory address.
+
+### **2. `addi sp,sp,-16`**
+- Adjust the stack pointer (`sp`) by decreasing it by 16 bytes.  
+- This reserves space on the stack for local variables or saved registers.
+
+### **3. `li a1,15`**
+- Load the immediate value `15` into register `a1`.  
+- This prepares one of the operands for the ALU operation.
+
+### **4. `addi a0,a0,560 # 21230 <__clzdi2+0x40>`**
+- Add `560` to `a0`.  
+- This completes the calculation of a memory address (`21230`) where data or a function resides.
+
+### **5. `sd ra,8(sp)`**
+- Store the return address (`ra`) at the memory location `sp + 8`.  
+- This ensures the return address is preserved before a function call.
+
+### **6. `jal ra,105e4 <printf>`**
+- Jump to the `printf` function and save the next instruction's address into `ra`.  
+- This outputs the ALU operation result.
+
+### **7. `lui a0,0x21`**
+- Reload the upper part of a new memory address into `a0`.
+
+### **8. `li a1,5`**
+- Load the immediate value `5` into register `a1`.  
+- This is another operand for the ALU.
+
+### **9. `addi a0,a0,576 # 21240 <__clzdi2+0x50>`**
+- Add an offset of `576` to `a0`.  
+- This calculates the next memory address.
+
+### **10. `jal ra,105e4 <printf>`**
+- Call `printf` to display the result of another ALU operation.
+
+### **11. `lui a0,0x21`**
+- Load the upper immediate value for another address.
+
+### **12. `li a1,50`**
+- Load the immediate value `50` into register `a1`.  
+- This is used for the next ALU operation.
+
+### **13. `addi a0,a0,600 # 21258 <__clzdi2+0x68>`**
+- Add an offset of `600` to `a0`.  
+- This prepares the memory address for another operation.
+
+### **14. `jal ra,105e4 <printf>`**
+- Call `printf` again to print the result.
+
+### **15. `lui a0,0x21`**
+- Reload the upper immediate value into `a0`.
+
+### **16. `li a1,2`**
+- Load the value `2` into `a1`.  
+- This is another operand.
+
+### **17. `addi a0,a0,624 # 21270 <__clzdi2+0x80>`**
+- Add an offset of `624` to `a0`.  
+- This sets up the memory address for the final operation.
+
+### **18. `jal ra,105e4 <printf>`**
+- Call `printf` to display the result of the final ALU operation.
+
+### **19. `ld ra,8(sp)`**
+- Load the return address (`ra`) from the stack.  
+- This restores the return address for proper function exit.
+
+### **20. `li a0,0`**
+- Set the value in `a0` to `0`.  
+- This is the return value of the `main` function (success).
+
+### **21. `addi sp,sp,16`**
+- Adjust the stack pointer back up by 16 bytes to deallocate local memory.
+
+### **22. `ret`**
+- Return from the function using the address in `ra`.
+---
 
 3.Debugging the Code
 Command:

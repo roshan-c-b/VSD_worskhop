@@ -130,7 +130,7 @@ This instruction is a common operation in RISC-V architecture.It performs an add
 
 Format- ADDI rd, rs1, immediate (rd- destination register, rs- source register, immediate- the immediate value to be added).
 
---
+
 Application CODE:
 --
 Arithmetic Logic Unit (ALU):
@@ -156,7 +156,6 @@ Now, compile with RISC-V GCC command. (Both -O1 and -Ofast).
 ![Task-2-3(new code- assembly)](https://github.com/user-attachments/assets/2a1d928f-f2b2-45e8-a325-b4772ad98eba)
 
 # Assembly Instruction Breakdown:
--
 
 ### **1. `lui a0,0x21`**
 - Load the upper immediate value `0x21` into the `a0` register.  
@@ -248,8 +247,10 @@ $ spike -d pk alu.o
 ![Task-2-4(new code-debugging)](https://github.com/user-attachments/assets/1fa5192b-f23e-4e4f-b535-7482199ed3ba)
 
 Finally, the address ```10104``` returns the final output.
+
+
 </details>
-***
+
 
 
  

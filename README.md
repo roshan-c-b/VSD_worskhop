@@ -119,13 +119,15 @@ At address `100d8`, the program returns the sum = `55`.
 ## About Instructions Used:
 ...
 LUI (LOAD UPPER IMMEDIATE):
+-
 This instruction is a key feature in RISC-V architecture. It is used to load a 20-bit immediate value into the upper 20 bits of a register, while setting the lower 12 bits to zero.
 
 Format - LUI rd, immediate [ rd- destination register, immediate- 20-bit immediate value to be loaded]
 The 20- bit immediate value is shifted left by 12 bits(appended with 12 zeros). 
 The lower 12 bits of the destination register are set to zero. 
 
-ADDI
+ADDI (ADD IMMEDIATE)
+-
 This instruction is a common operation in RISC-V architecture.It performs an addition between a register and a sign-extended immediate value, storing the result in a destination register.
 
 Format- ADDI rd, rs1, immediate (rd- destination register, rs- source register, immediate- the immediate value to be added).

@@ -80,22 +80,22 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
 <details>
 <summary><b>Task 2:</b> SPIKE simulation and Debugging of C code Using Spike  </summary>   
 <br>
-## SPIKE SIMULATION
-
+SPIKE SIMULATION
+--------
 SPIKE is a RISC-V simulator. In this task we will be checking the output of the previous program (from task1- ```sum1ton.o```) using RSIC-V
 Compiler with the spike command.
 
 ![Task-2-1](https://github.com/user-attachments/assets/9fa16c2f-6699-4426-bc1a-f68c3153afd5)
 
-Debugging using the command
+1.Debugging using the command
 ```
 $spike -d pk sum1ton.o
 ```
-Assembly Language program:-
+2.Assembly Language program:-
 
 ![Task-2-2](https://github.com/user-attachments/assets/cdf273bd-d94d-4b1f-92af-af6bbfb16c7d)
 
-Debugger:
+3.Debugger:
 
 ![Task-2-3](https://github.com/user-attachments/assets/663ef5cf-651f-44a8-b6e5-33ecd90bb569)
 
@@ -135,7 +135,7 @@ An Arithmetic Logic Unit (ALU) is a fundamental building block of any processor,
 
 The generated assembly code showcases how instructions are executed at a low level, highlighting the efficiency and simplicity of the RISC-V instruction set.
 
-C-program :
+1.C-program :
 -
 ```
 Open leafpad in the terminal and write the C code.
@@ -147,11 +147,11 @@ Now, compile with RISC-V GCC command. (Both -O1 and -Ofast).
 
 ![Task-2-2(new code)](https://github.com/user-attachments/assets/85246589-1255-4958-b7a3-17524b18d32e)
 
-Assembly Program for the C code:
+2.Assembly Program for the C code:
 
 ![Task-2-3(new code- assembly)](https://github.com/user-attachments/assets/2a1d928f-f2b2-45e8-a325-b4772ad98eba)
 
-Debugging the Code
+3.Debugging the Code
 Command:
 ```
 $ spike -d pk alu.o

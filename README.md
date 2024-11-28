@@ -120,7 +120,47 @@ Format-ADDI rd, rs1, immediate (rd- destination register, rs- source register, i
 
 
 --
+Application:
+--
+Counterdown Clock :
+--
+The countdown counter is a program that begins from a specified value and decrements it by one at regular intervals until it reaches zero.
 
+We want to create a program that:
+
+1.Initializes a timer with a starting value (e.g., 10 seconds).
+
+2.Prints the current countdown value.
+
+3.Decrements the timer every second.
+
+4.Stops when the timer reaches zero.
+
+C-program :
+-
+```
+Open leafpad in the terminal and write the C code.
+Compile with C gcc compiler and check the output.
+```
+![Task-2-1(new code)](https://github.com/user-attachments/assets/dcf15d52-d269-49af-8876-ef47ed2b168b)
+
+Now, compile with RISC-V GCC command. (Both -O1 and -Ofast).
+
+![Task-2-2(new code)](https://github.com/user-attachments/assets/85246589-1255-4958-b7a3-17524b18d32e)
+
+Assembly Program for the C code:
+
+![Task-2-3(new code- assembly)](https://github.com/user-attachments/assets/2a1d928f-f2b2-45e8-a325-b4772ad98eba)
+
+
+Debugging the Code
+Command:
+```
+$ spike -d pk alu.o
+```
+
+
+![Task-2-4(new code-debugging)](https://github.com/user-attachments/assets/1fa5192b-f23e-4e4f-b535-7482199ed3ba)
 </details>
 ***
 

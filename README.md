@@ -152,11 +152,11 @@ Now, compile with RISC-V GCC command. (Both -O1 and -Ofast).
 ![Task-2-2(new code)](https://github.com/user-attachments/assets/85246589-1255-4958-b7a3-17524b18d32e)
 
 2.Assembly Program for the C code:
-
+-
 ![Task-2-3(new code- assembly)](https://github.com/user-attachments/assets/2a1d928f-f2b2-45e8-a325-b4772ad98eba)
 
 # Assembly Instruction Breakdown:
----
+-
 
 ### **1. `lui a0,0x21`**
 - Load the upper immediate value `0x21` into the `a0` register.  
@@ -240,6 +240,7 @@ Now, compile with RISC-V GCC command. (Both -O1 and -Ofast).
 ---
 
 3.Debugging the Code
+-
 Command:
 ```
 $ spike -d pk alu.o

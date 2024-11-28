@@ -80,7 +80,7 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
 <details>
 <summary><b>Task 2:</b> SPIKE simulation and Debugging of C code Using Spike  </summary>   
 <br>
-SPIKE SIMULATION
+## SPIKE SIMULATION
 
 SPIKE is a RISC-V simulator. In this task we will be checking the output of the previous program (from task1- ```sum1ton.o```) using RSIC-V
 Compiler with the spike command.

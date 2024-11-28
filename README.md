@@ -78,38 +78,41 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
 
 
 <details>
-<summary><b>Task 2:</b> SPIKE simulation and Debugging of C code Using Spike  </summary>   
+<summary><b>Task 2:</b> SPIKE simulation and Debugging of C code Using Spike</summary>   
 <br>
+
 SPIKE SIMULATION
--------- 
-SPIKE is a RISC-V simulator. In this task we will be checking the output of the previous program (from task1- ```sum1ton.o```) using RSIC-V
-Compiler with the spike command.
+--------
 
-![Task-2-1](https://github.com/user-attachments/assets/9fa16c2f-6699-4426-bc1a-f68c3153afd5)
+SPIKE is a RISC-V simulator. In this task, we will check the output of the previous program (from task1 - ```sum1ton.o```) using the RISC-V Compiler with the spike command.
 
-1.Debugging using the command
-```
-$spike -d pk sum1ton.o
-```
-2.Assembly Language program:-
+1. Debugging using the command:
+    ```bash
+    $ spike -d pk sum1ton.o
+    ```
 
-![Task-2-2](https://github.com/user-attachments/assets/cdf273bd-d94d-4b1f-92af-af6bbfb16c7d)
+2. Assembly Language Program:
 
-3.Debugger:
+3. Debugger:
 
-![Task-2-3](https://github.com/user-attachments/assets/663ef5cf-651f-44a8-b6e5-33ecd90bb569)
+...
+
+At address `100b4` the value of stack point before and after completion of the instruction is:
+- `sp` = `0x0000003ffffffb50`
+- `sp, sp, -16` = `0x0000003ffffffb40`
+
+Difference between stack point values = `10 (Hexadecimal)`, `16 (Decimal)`.
+
+---
+
+At address `100d8`, the program returns the sum = `55`.
+
+<hr>
+
+## About Instructions Used:
+...
 
 
-![Task-2-4](https://github.com/user-attachments/assets/e864276a-1242-49ab-bfc0-9db3db0755ce)
-
-At address `100b4` the value of stack point before and after completion of instruction is 
-`sp`= `0x0000003ffffffb50` and  `sp, sp, -16` = `0x0000003ffffffb40`.
-
-![Task-2-4(calc)](https://github.com/user-attachments/assets/2056bdb2-7875-4978-aeb6-441cf3594ab9)
-
-By the above calculation :- Difference between the values at stack point in both the cases = 10 (Hexadecimal), 16 (Decimal).
-
-At address '100d8' the value of sum of the program is returned (= 55).
 
 ## About instructions used:
 

@@ -75,11 +75,14 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   Same number of instructions as the command in step-4 (with O1).
   
 </details>
-
+--------------------------
 <details>
 <summary><b>Task 2:</b> SPIKE simulation and Debugging of C code Using Spike  </summary>   
 <br>
- 
+SPIKE SIMULATION
+--------------------------------
+SPIKE is a RISC-V simulator. In this task we will be checking the output of the previous program (from task1- ```sum1ton.o```) using RSIC-V
+Compiler with the spike command.
 
 ![Task-2-1](https://github.com/user-attachments/assets/9fa16c2f-6699-4426-bc1a-f68c3153afd5)
 
@@ -87,7 +90,7 @@ Debugging using the command
 ```
 $spike -d pk sum1ton.o
 ```
-Assembly Language :-
+Assembly Language program:-
 
 ![Task-2-2](https://github.com/user-attachments/assets/cdf273bd-d94d-4b1f-92af-af6bbfb16c7d)
 
@@ -97,18 +100,20 @@ Debugger:
 
 
 ![Task-2-4](https://github.com/user-attachments/assets/e864276a-1242-49ab-bfc0-9db3db0755ce)
-![Task-2-4(calc)](https://github.com/user-attachments/assets/2056bdb2-7875-4978-aeb6-441cf3594ab9)
 
 At address `100b4` the value of stack point `sp`= `0x0000003ffffffb50` 
 after completion of instruction`sp, sp, -16` = `0x0000003ffffffb40`
-By the above calculation :- Difference between the values at stack point in both the cases = 10 (decimal)
+
+![Task-2-4(calc)](https://github.com/user-attachments/assets/2056bdb2-7875-4978-aeb6-441cf3594ab9)
+
+By the above calculation :- Difference between the values at stack point in both the cases = 10 (Hexadecimal), 16 (Decimal).
 
 At address '100d8' the value of sum of the program is returned (= 55).
 
 ## About instructions used:
 
 LUI (LOAD UPPER IMMEDIATE):
-This instruction is a key feature in RISC-V architecture.. It is used to load a 20-bit immediate value into the upper 20 bits of a register, while setting the lower 12 bits to zero.
+This instruction is a key feature in RISC-V architecture. It is used to load a 20-bit immediate value into the upper 20 bits of a register, while setting the lower 12 bits to zero.
 
 Format - LUI rd, immediate [ rd- destination register, immediate- 20-bit immediate value to be loaded]
 The 20- bit immediate value is shifted left by 12 bits(appended with 12 zeros). 
@@ -116,25 +121,18 @@ The lower 12 bits of the destination register are set to zero.
 
 ADDI
 This instruction is a common operation in RISC-V architecture.It performs an addition between a register and a sign-extended immediate value, storing the result in a destination register.
-Format-ADDI rd, rs1, immediate (rd- destination register, rs- source register, immediate-
+
+Format- ADDI rd, rs1, immediate (rd- destination register, rs- source register, immediate- the immediate value to be added).
 
 
 --
 Application:
 --
-Counterdown Clock :
+Arithmetic Logic Unit (ALU):
 --
-The countdown counter is a program that begins from a specified value and decrements it by one at regular intervals until it reaches zero.
+An Arithmetic Logic Unit (ALU) is a fundamental building block of any processor, responsible for performing arithmetic and logic operations. This code simulates a simple ALU in C, which can execute basic operations like addition, subtraction, multiplication, and division. The operations are selected programmatically, and the results are displayed to demonstrate the functionality of the ALU. This program is designed to work across various compilers, including GCC and RISC-V GCC, ensuring platform compatibility and enabling easy testing on different hardware architectures.
 
-We want to create a program that:
-
-1.Initializes a timer with a starting value (e.g., 10 seconds).
-
-2.Prints the current countdown value.
-
-3.Decrements the timer every second.
-
-4.Stops when the timer reaches zero.
+The generated assembly code showcases how instructions are executed at a low level, highlighting the efficiency and simplicity of the RISC-V instruction set.
 
 C-program :
 -
@@ -152,15 +150,14 @@ Assembly Program for the C code:
 
 ![Task-2-3(new code- assembly)](https://github.com/user-attachments/assets/2a1d928f-f2b2-45e8-a325-b4772ad98eba)
 
-
 Debugging the Code
 Command:
 ```
 $ spike -d pk alu.o
 ```
-
-
 ![Task-2-4(new code-debugging)](https://github.com/user-attachments/assets/1fa5192b-f23e-4e4f-b535-7482199ed3ba)
+
+Finally, the address ```10104``` returns the final output.
 </details>
 ***
 

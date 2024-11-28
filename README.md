@@ -75,7 +75,8 @@ This development board has a 32-bit RISC-V CPU with a clock speed of 24MHz, 16KB
   Same number of instructions as the command in step-4 (with O1).
   
 </details>
---------------------------
+
+
 <details>
 <summary><b>Task 2:</b> SPIKE simulation and Debugging of C code Using Spike  </summary>   
 <br>

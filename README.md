@@ -102,8 +102,8 @@ Debugger:
 
 ![Task-2-4](https://github.com/user-attachments/assets/e864276a-1242-49ab-bfc0-9db3db0755ce)
 
-At address `100b4` the value of stack point `sp`= `0x0000003ffffffb50` 
-after completion of instruction`sp, sp, -16` = `0x0000003ffffffb40`
+At address `100b4` the value of stack point before and after completion of instruction is 
+`sp`= `0x0000003ffffffb50` and  `sp, sp, -16` = `0x0000003ffffffb40`.
 
 ![Task-2-4(calc)](https://github.com/user-attachments/assets/2056bdb2-7875-4978-aeb6-441cf3594ab9)
 
@@ -127,7 +127,7 @@ Format- ADDI rd, rs1, immediate (rd- destination register, rs- source register, 
 
 
 --
-Application:
+Application CODE:
 --
 Arithmetic Logic Unit (ALU):
 --

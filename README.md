@@ -95,7 +95,6 @@ SPIKE is a RISC-V simulator. In this task, we will check the output of the previ
 
 3. Debugger:
 
-...
 
 At address `100b4` the value of stack point before and after completion of the instruction is:
 - `sp` = `0x0000003ffffffb50`

@@ -276,6 +276,7 @@ Finally, the address ```10104``` returns the final output.
   $ riscv64-unknown-elf-objdump -d alu.o | less 
   ```
   Following are the 15 instructions used in the application code: <br />
+  ```
   
      | **Instruction**            | **Purpose**                                                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
@@ -295,7 +296,7 @@ Finally, the address ```10104``` returns the final output.
    | `addi sp,sp,16`            | Deallocate 16 bytes from the stack by incrementing the stack pointer.      |
    | `ret`                      | Return from the function using the address in the `ra` register.          |
 
-  
+  ```  
 
   **3.The following table shows the 32-bit instructions code for the above 15 instructions**<br />
 

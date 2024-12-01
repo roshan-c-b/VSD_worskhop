@@ -248,8 +248,87 @@ $ spike -d pk alu.o
 
 Finally, the address ```10104``` returns the final output.
 
-
 </details>
+
+
+<details>
+<summary><b>Task 3:</b>  </summary><br />
+  
+
+  **1.Various RISC-V instruction type are as follows:**<br />
+ 
+  ```
+   The RISC-V ISA defines the following instruction types:
+   
+   R-Type: Register-register operations
+   I-Type: Immediate operations
+   S-Type: Store instructions
+   B-Type: Branch instructions
+   U-Type: Upper immediate instructions
+   J-Type: Jump instructions
+
+  ```
+  
+  **2.15 unique RISC-V instrictions from the application code**<br />
+      * To view the instructions , we should use the following commands to compile and view the assembly code.
+  ```
+  $ $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o alu.o alu.c
+  $ riscv64-unknown-elf-objdump -d alu.o | less 
+  ```
+  Following are the 15 instructions used in the application code: <br />
+  
+     | **Instruction**            | **Purpose**                                                                 |
+   |-----------------------------|-----------------------------------------------------------------------------|
+   | `lui a0,0x21`              | Load the upper immediate value `0x21` into the `a0` register.               |
+   | `addi sp,sp,-16`           | Reserve 16 bytes on the stack by decrementing the stack pointer.           |
+   | `li a1,15`                 | Load the immediate value `15` into the `a1` register (operand setup).      |
+   | `sd ra,8(sp)`              | Store the return address (`ra`) to the stack for preserving state.         |
+   | `jal ra,105e4 <printf>`    | Jump to the `printf` function to print the result and save the return addr.|
+   | `ld ra,8(sp)`              | Load the return address (`ra`) from the stack to restore state.            |
+   | `addi a0,a0,560`           | Add an offset (`560`) to the address in `a0` for address calculation.      |
+   | `li a1,5`                  | Load the immediate value `5` into the `a1` register.                      |
+   | `addi a0,a0,576`           | Add an offset (`576`) to the address in `a0`.                              |
+   | `li a1,50`                 | Load the immediate value `50` into the `a1` register.                     |
+   | `addi a0,a0,600`           | Add an offset (`600`) to the address in `a0`.                              |
+   | `li a1,2`                  | Load the immediate value `2` into the `a1` register.                      |
+   | `addi a0,a0,624`           | Add an offset (`624`) to the address in `a0`.                              |
+   | `addi sp,sp,16`            | Deallocate 16 bytes from the stack by incrementing the stack pointer.      |
+   | `ret`                      | Return from the function using the address in the `ra` register.          |
+
+  
+
+  **3.The following table shows the 32-bit instructions code for the above 15 instructions**<br />
+
+       | **Instruction**            | **Instruction Type** | **32-bit Binary Representation**        |
+   |-----------------------------|----------------------|------------------------------------------|
+   | `lui a0,0x21`              | U                   | `00000000000100001010000010110111`      |
+   | `addi sp,sp,-16`           | I                   | `11111111111100010100000010010011`      |
+   | `li a1,15`                 | I                   | `00000000011100010101000110010011`      |
+   | `sd ra,8(sp)`              | S                   | `00000000100000010101001110000011`      |
+   | `jal ra,105e4 <printf>`    | J                   | `00000000101000001011101011101111`      |
+   | `ld ra,8(sp)`              | I                   | `00000000100000010110001110000011`      |
+   | `addi a0,a0,560`           | I                   | `00000001000101001000000010010011`      |
+   | `li a1,5`                  | I                   | `00000000010100010101000110010011`      |
+   | `addi a0,a0,576`           | I                   | `00000001001001001000000010010011`      |
+   | `li a1,50`                 | I                   | `00000011001000010101000110010011`      |
+   | `addi a0,a0,600`           | I                   | `00000010000001001000000010010011`      |
+   | `li a1,2`                  | I                   | `00000000001000010101000110010011`      |
+   | `addi a0,a0,624`           | I                   | `00000010000101001000000010010011`      |
+   | `addi sp,sp,16`            | I                   | `00000000100000010100000010010011`      |
+   | `ret`                      | I                   | `00000000000000000000000001100011`      |
+
+    
+
+  
+  **4.Com**<br />
+
+
+
+
+  
+</details>
+
+
 
 
 

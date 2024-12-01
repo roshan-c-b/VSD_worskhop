@@ -280,25 +280,26 @@ Finally, the address ```10104``` returns the final output.
   
      | **Instruction**            | **Purpose**                                                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
-   | `lui a0,0x21`              | Load the upper immediate value `0x21` into the `a0` register.               |
-   | `addi sp,sp,-16`           | Reserve 16 bytes on the stack by decrementing the stack pointer.           |
-   | `li a1,15`                 | Load the immediate value `15` into the `a1` register (operand setup).      |
-   | `sd ra,8(sp)`              | Store the return address (`ra`) to the stack for preserving state.         |
-   | `jal ra,105e4 <printf>`    | Jump to the `printf` function to print the result and save the return addr.|
-   | `ld ra,8(sp)`              | Load the return address (`ra`) from the stack to restore state.            |
-   | `addi a0,a0,560`           | Add an offset (`560`) to the address in `a0` for address calculation.      |
-   | `li a1,5`                  | Load the immediate value `5` into the `a1` register.                      |
-   | `addi a0,a0,576`           | Add an offset (`576`) to the address in `a0`.                              |
-   | `li a1,50`                 | Load the immediate value `50` into the `a1` register.                     |
-   | `addi a0,a0,600`           | Add an offset (`600`) to the address in `a0`.                              |
-   | `li a1,2`                  | Load the immediate value `2` into the `a1` register.                      |
-   | `addi a0,a0,624`           | Add an offset (`624`) to the address in `a0`.                              |
-   | `addi sp,sp,16`            | Deallocate 16 bytes from the stack by incrementing the stack pointer.      |
-   | `ret`                      | Return from the function using the address in the `ra` register.          |
+   | `lui a0,0x21`              | Load the upper immediate value `0x21` into the `a0` register.                |
+   | `addi sp,sp,-16`           | Reserve 16 bytes on the stack by decrementing the stack pointer.             |
+   | `li a1,15`                 | Load the immediate value `15` into the `a1` register (operand setup).        |
+   | `sd ra,8(sp)`              | Store the return address (`ra`) to the stack for preserving state.           |
+   | `jal ra,105e4 <printf>`    | Jump to the `printf` function to print the result and save the return addr.  |
+   | `ld ra,8(sp)`              | Load the return address (`ra`) from the stack to restore state.              |
+   | `addi a0,a0,560`           | Add an offset (`560`) to the address in `a0` for address calculation.        |
+   | `li a1,5`                  | Load the immediate value `5` into the `a1` register.                         | 
+   | `addi a0,a0,576`           | Add an offset (`576`) to the address in `a0`.                                |
+   | `li a1,50`                 | Load the immediate value `50` into the `a1` register.                        |
+   | `addi a0,a0,600`           | Add an offset (`600`) to the address in `a0`.                                |
+   | `li a1,2`                  | Load the immediate value `2` into the `a1` register.                         |
+   | `addi a0,a0,624`           | Add an offset (`624`) to the address in `a0`.                                |
+   | `addi sp,sp,16`            | Deallocate 16 bytes from the stack by incrementing the stack pointer.        |
+   | `ret`                      | Return from the function using the address in the `ra` register.             |
 
-  ```  
+  ```
 
   **3.The following table shows the 32-bit instructions code for the above 15 instructions**<br />
+  ```
 
        | **Instruction**            | **Instruction Type** | **32-bit Binary Representation**        |
    |-----------------------------|----------------------|------------------------------------------|
@@ -317,6 +318,7 @@ Finally, the address ```10104``` returns the final output.
    | `addi a0,a0,624`           | I                   | `00000010000101001000000010010011`      |
    | `addi sp,sp,16`            | I                   | `00000000100000010100000010010011`      |
    | `ret`                      | I                   | `00000000000000000000000001100011`      |
+```
 
     
 

@@ -432,9 +432,6 @@ Finally, the address ```10104``` returns the final output.
 
 ### Detailed RISC-V Instruction Table
 
-<details>
-<strong>Instruction Table with 32-bit Breakdown</strong><br>
-
 | **Instruction**       | **Type** | **32-bit Binary Representation** | **Breakdown**                                                                                                         |
 |------------------------|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `lui a0,0x21`         | U        | `00000000000100001010000010110111` | <br>opcode: `0110111` <br>rd: `01010` (a0) <br>imm[31:12]: `000000000001`                                             |

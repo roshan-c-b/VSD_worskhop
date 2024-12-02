@@ -268,6 +268,139 @@ Finally, the address ```10104``` returns the final output.
    J-Type: Jump instructions
 
   ```
+   # RISC-V Instruction Formats and ALU Implementation
+
+## RISC-V Instruction Formats
+
+### R-Type Instructions
+<details>
+<summary>R-Type Format</summary>
+<ul>
+  <li><strong>Bit Range:</strong></li>
+  <ul>
+    <li><strong>opcode:</strong> [0:6] - Specifies the operation type (e.g., arithmetic, logical).</li>
+    <li><strong>rd:</strong> [7:11] - Destination register.</li>
+    <li><strong>funct3:</strong> [12:14] - Specifies the operation (e.g., ADD, SUB).</li>
+    <li><strong>rs1:</strong> [15:19] - First source register.</li>
+    <li><strong>rs2:</strong> [20:24] - Second source register.</li>
+    <li><strong>funct7:</strong> [25:31] - Additional operation specifier (e.g., ADD vs. SUB).</li>
+  </ul>
+  <br>
+  <strong>Example:</strong> ADD rd, rs1, rs2 <br>
+  <strong>Operation:</strong> Adds the values in rs1 and rs2 and stores the result in rd. <br>
+  <strong>Opcode:</strong> 0110011
+</ul>
+</details>
+
+---
+
+### I-Type Instructions
+<details>
+<summary>I-Type Format</summary>
+<ul>
+  <li><strong>Bit Range:</strong></li>
+  <ul>
+    <li><strong>opcode:</strong> [0:6] - Specifies the operation type.</li>
+    <li><strong>rd:</strong> [7:11] - Destination register.</li>
+    <li><strong>funct3:</strong> [12:14] - Specifies the operation.</li>
+    <li><strong>rs1:</strong> [15:19] - Source register.</li>
+    <li><strong>imm[11:0]:</strong> [20:31] - 12-bit signed immediate value.</li>
+  </ul>
+  <br>
+  <strong>Example:</strong> ADDI rd, rs1, imm <br>
+  <strong>Operation:</strong> Adds an immediate value (imm) to rs1 and stores the result in rd. <br>
+  <strong>Opcode:</strong> 0010011
+</ul>
+</details>
+
+---
+
+### S-Type Instructions
+<details>
+<summary>S-Type Format</summary>
+<ul>
+  <li><strong>Bit Range:</strong></li>
+  <ul>
+    <li><strong>opcode:</strong> [0:6] - Specifies the store operation.</li>
+    <li><strong>imm[4:0]:</strong> [7:11] - Lower 5 bits of the immediate value.</li>
+    <li><strong>funct3:</strong> [12:14] - Specifies the store operation (e.g., SW, SH).</li>
+    <li><strong>rs1:</strong> [15:19] - Base address register.</li>
+    <li><strong>rs2:</strong> [20:24] - Register whose value will be stored.</li>
+    <li><strong>imm[11:5]:</strong> [25:31] - Upper 7 bits of the immediate value.</li>
+  </ul>
+  <br>
+  <strong>Example:</strong> SW rs2, imm(rs1) <br>
+  <strong>Operation:</strong> Stores the value in rs2 at the memory address calculated as rs1 + imm. <br>
+  <strong>Opcode:</strong> 0100011
+</ul>
+</details>
+
+---
+
+### U-Type Instructions
+<details>
+<summary>U-Type Format</summary>
+<ul>
+  <li><strong>Bit Range:</strong></li>
+  <ul>
+    <li><strong>opcode:</strong> [0:6] - Specifies the type of instruction.</li>
+    <li><strong>rd:</strong> [7:11] - Destination register.</li>
+    <li><strong>imm[31:12]:</strong> [12:31] - 20-bit immediate value.</li>
+  </ul>
+  <br>
+  <strong>Example:</strong> LUI rd, imm <br>
+  <strong>Operation:</strong> Loads the upper 20 bits of imm into rd. <br>
+  <strong>Opcode:</strong> 0110111
+</ul>
+</details>
+
+---
+
+### B-Type Instructions
+<details>
+<summary>B-Type Format</summary>
+<ul>
+  <li><strong>Bit Range:</strong></li>
+  <ul>
+    <li><strong>opcode:</strong> [0:6] - Specifies the branch operation.</li>
+    <li><strong>imm[11]:</strong> [7] - Bit 11 of the branch offset.</li>
+    <li><strong>imm[4:1]:</strong> [8:11] - Lower 4 bits of the branch offset.</li>
+    <li><strong>funct3:</strong> [12:14] - Specifies the branch condition (e.g., BEQ, BNE).</li>
+    <li><strong>rs1:</strong> [15:19] - First source register.</li>
+    <li><strong>rs2:</strong> [20:24] - Second source register.</li>
+    <li><strong>imm[10:5]:</strong> [25:30] - Bits 5–10 of the branch offset.</li>
+    <li><strong>imm[12]:</strong> [31] - Bit 12 of the branch offset.</li>
+  </ul>
+  <br>
+  <strong>Example:</strong> BEQ rs1, rs2, imm <br>
+  <strong>Operation:</strong> Branches to PC + imm if rs1 == rs2. <br>
+  <strong>Opcode:</strong> 1100011
+</ul>
+</details>
+
+---
+
+### J-Type Instructions
+<details>
+<summary>J-Type Format</summary>
+<ul>
+  <li><strong>Bit Range:</strong></li>
+  <ul>
+    <li><strong>opcode:</strong> [0:6] - Specifies the jump operation.</li>
+    <li><strong>rd:</strong> [7:11] - Destination register to store the return address.</li>
+    <li><strong>imm[19:12]:</strong> [12:19] - Bits 12–19 of the jump offset.</li>
+    <li><strong>imm[11]:</strong> [20] - Bit 11 of the jump offset.</li>
+    <li><strong>imm[10:1]:</strong> [21:30] - Bits 1–10 of the jump offset.</li>
+    <li><strong>imm[20]:</strong> [31] - Bit 20 of the jump offset.</li>
+  </ul>
+  <br>
+  <strong>Example:</strong> JAL rd, imm <br>
+  <strong>Operation:</strong> Jumps to PC + imm and stores the return address in rd. <br>
+  <strong>Opcode:</strong> 1101111
+</ul>
+</details>
+
+---
   
   **2.15 unique RISC-V instrictions from the application code**<br />
       * To view the instructions , we should use the following commands to compile and view the assembly code.

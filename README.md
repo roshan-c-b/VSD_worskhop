@@ -252,13 +252,13 @@ Finally, the address ```10104``` returns the final output.
 
 
 <details>
-<summary><b>Task 3:</b>  </summary><br />
+<summary><b>Task 3:Types of RISC-V Instructions and the 32-bit representation of the instructions from application code. </b>  </summary><br />
   
 
-  **1.Various RISC-V instruction type are as follows:**<br />
+**1.Various RISC-V instruction type are as follows:**<br />
 
-  ## RISC-V Instruction Formats
-  ```
+## RISC-V Instruction Formats
+ ```
    The RISC-V ISA defines the following instruction types:
    
    R-Type: Register-register operations
@@ -268,7 +268,7 @@ Finally, the address ```10104``` returns the final output.
    U-Type: Upper immediate instructions
    J-Type: Jump instructions
 
-  ```
+ ```
 ### R-Type Instructions
 <details>
 <summary>R-Type Format</summary>

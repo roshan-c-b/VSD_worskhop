@@ -408,8 +408,8 @@ Finally, the address ```10104``` returns the final output.
   Following are the 15 instructions used in the application code: <br />
   ```
   
-     | **Instruction**            | **Purpose**                                                                 |
-   |-----------------------------|-----------------------------------------------------------------------------|
+   |**Instruction**             |**Purpose**                                                                   |
+   |----------------------------|------------------------------------------------------------------------------|
    | `lui a0,0x21`              | Load the upper immediate value `0x21` into the `a0` register.                |
    | `addi sp,sp,-16`           | Reserve 16 bytes on the stack by decrementing the stack pointer.             |
    | `li a1,15`                 | Load the immediate value `15` into the `a1` register (operand setup).        |

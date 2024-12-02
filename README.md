@@ -256,7 +256,8 @@ Finally, the address ```10104``` returns the final output.
   
 
   **1.Various RISC-V instruction type are as follows:**<br />
- 
+
+  ## RISC-V Instruction Formats
   ```
    The RISC-V ISA defines the following instruction types:
    
@@ -268,10 +269,6 @@ Finally, the address ```10104``` returns the final output.
    J-Type: Jump instructions
 
   ```
-   # RISC-V Instruction Formats and ALU Implementation
-
-## RISC-V Instruction Formats
-
 ### R-Type Instructions
 <details>
 <summary>R-Type Format</summary>
@@ -432,36 +429,7 @@ Finally, the address ```10104``` returns the final output.
   ```
 
   **3.The following table shows the 32-bit instructions code for the above 15 instructions**<br />
-  ```
 
-       | **Instruction**            | **Instruction Type** | **32-bit Binary Representation**        |
-   |-----------------------------|----------------------|------------------------------------------|
-   | `lui a0,0x21`              | U                   | `00000000000100001010000010110111`      |
-   | `addi sp,sp,-16`           | I                   | `11111111111100010100000010010011`      |
-   | `li a1,15`                 | I                   | `00000000011100010101000110010011`      |
-   | `sd ra,8(sp)`              | S                   | `00000000100000010101001110000011`      |
-   | `jal ra,105e4 <printf>`    | J                   | `00000000101000001011101011101111`      |
-   | `ld ra,8(sp)`              | I                   | `00000000100000010110001110000011`      |
-   | `addi a0,a0,560`           | I                   | `00000001000101001000000010010011`      |
-   | `li a1,5`                  | I                   | `00000000010100010101000110010011`      |
-   | `addi a0,a0,576`           | I                   | `00000001001001001000000010010011`      |
-   | `li a1,50`                 | I                   | `00000011001000010101000110010011`      |
-   | `addi a0,a0,600`           | I                   | `00000010000001001000000010010011`      |
-   | `li a1,2`                  | I                   | `00000000001000010101000110010011`      |
-   | `addi a0,a0,624`           | I                   | `00000010000101001000000010010011`      |
-   | `addi sp,sp,16`            | I                   | `00000000100000010100000010010011`      |
-   | `ret`                      | I                   | `00000000000000000000000001100011`      |
-```
-
-    
-
-  
-  **4.Com**<br />
-
-
-
-
-  
 </details>
 
 

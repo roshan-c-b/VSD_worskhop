@@ -428,12 +428,12 @@ Finally, the address ```10104``` returns the final output.
 
   ```
 
-  **3.The following table shows the 32-bit instructions code for the above 15 instructions**<br />
+**3. The following table shows the 32-bit instructions code for the above 15 instructions**<br />
 
-  # Detailed RISC-V Instruction Table
+### Detailed RISC-V Instruction Table
 
 <details>
-<summary><strong>Instruction Table with 32-bit Breakdown</strong></summary>
+<strong>Instruction Table with 32-bit Breakdown</strong><br>
 
 | **Instruction**       | **Type** | **32-bit Binary Representation** | **Breakdown**                                                                                                         |
 |------------------------|----------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------|

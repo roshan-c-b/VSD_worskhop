@@ -454,6 +454,74 @@ Finally, the address ```10104``` returns the final output.
 
 </details>
 
+<details>
+<summary><b>Task 4:</b> Simulation of RISC-V Code Verilog netlist and Testbench </summary>   
+<br>
+
+Command to install iverliog and GTKWave:-
+```
+$ sudo apt install iverilog gtkwave
+
+```
+Step-1. Create a directory with the command:-
+```
+mkdir <name>
+```
+Step-2. create 2 files with the ```touch``` command as ```name_rv32i.v``` and ```name_rv32i_tb.v``` for verilog netlist and testbench code respectively.
+
+We will not be writing the verilog codes, we shall take it from the following reference github repository.
+
+
+Step-3. After getting the verilog codes and saving them, we can now simulate and verify.
+Use the following code:-
+```
+$ iverilog -o name_rv32i name_rv32i.v name_rv32i_tb.v
+```
+After the above command is run, it will create ```iiitb_rv32i.vcd``` file.
+
+Step-4. Now we shall open GTKWave with the above generated file, and view the output waveforms 
+
+Command for opening GTKWave:
+```
+$ gtkwave iiitb_rv32i.vcd
+```
+The instructions in the verilog code are hard-coded.
+
+**Hard-coded ISA** - That means the instructions do not follow the RISC-V 32-bit pattern, they have been encoded by designer with custom pattern.
+
+
+Viewing the Output waveforms of the instructions in GTKWave :
+--
+
+1. ADD R6,R2,R1
+
+![inst-1](https://github.com/user-attachments/assets/b620b73f-b2fd-450a-8be4-47c30f9bbb09)
+
+2. SUB R7,R1,R2
+
+![inst2-sub](https://github.com/user-attachments/assets/e4053e9c-6f78-4180-b15e-c699f6e81b2a)
+
+3. AND R8,R1,R3
+
+![inst3-AND](https://github.com/user-attachments/assets/0d277649-7941-4f31-bf0a-6693fff7472c)
+
+4. OR R9,R2,R5
+
+![inst4-OR](https://github.com/user-attachments/assets/50a69faf-d96e-4241-8290-39f239262ffe)
+
+5. XOR R10,R1,R4
+
+![inst5-XOR](https://github.com/user-attachments/assets/05c49a20-b0de-4097-ba4d-1c7aa1552c17)
+
+6. SLT R1,R2,R4
+
+![inst6-SLT](https://github.com/user-attachments/assets/428bd51d-478f-4cf4-a712-80878ad2f8dc)
+
+7. ADDI R12,R4,5
+
+![inst7-ADDI](https://github.com/user-attachments/assets/2c1f3a63-e42a-4f80-8f49-e66f7801a0a8)
+
+8. 
 
 
 

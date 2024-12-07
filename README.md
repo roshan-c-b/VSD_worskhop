@@ -511,7 +511,7 @@ Viewing the Output waveforms of the instructions in GTKWave :
 
 5. XOR R10,R1,R4
 
-![inst5-XOR](https://github.com/user-attachments/assets/05c49a20-b0de-4097-ba4d-1c7aa1552c17)
+![inst5-XOR](https://github.com/user-attachments/assets/7c972e65-f834-4873-b1dc-05b4ba230c2f)
 
 6. SLT R1,R2,R4
 

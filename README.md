@@ -463,6 +463,8 @@ Command to install iverliog and GTKWave:-
 $ sudo apt install iverilog gtkwave
 
 ```
+Follow the following steps to perform the simulation:
+-
 Step-1. Create a directory with the command:-
 ```
 mkdir <name>
@@ -470,6 +472,7 @@ mkdir <name>
 Step-2. create 2 files with the ```touch``` command as ```name_rv32i.v``` and ```name_rv32i_tb.v``` for verilog netlist and testbench code respectively.
 
 We will not be writing the verilog codes, we shall take it from the following reference github repository.
+Github repository: [iiitb_rv32i](https://github.com/vinayrayapati/rv32i/)* 
 
 
 Step-3. After getting the verilog codes and saving them, we can now simulate and verify.
@@ -488,6 +491,24 @@ $ gtkwave iiitb_rv32i.vcd
 The instructions in the verilog code are hard-coded.
 
 **Hard-coded ISA** - That means the instructions do not follow the RISC-V 32-bit pattern, they have been encoded by designer with custom pattern.
+
+The following table explains the instructions in detail and the shows difference between RISC-V and custom encoding of instructions:
+
+| **Instruction**      | **Explanation**                                                                          | **RISC-V Encoding**  | **Custom Encoding**  |
+|-----------------------|-----------------------------------------------------------------------------------------|----------------------|----------------------|
+| **ADD R4, R3, R2**    | Computes the sum of the values in R3 and R2, placing the result in R4                   | `32'h00210333`       | `32'h02308400`       |
+| **SUB R5, R2, R3**    | Subtracts the value stored in R3 from R2 and stores the result in R5                    | `32'h403103b3`       | `32'h02309480`       |
+| **AND R6, R2, R4**    | Executes a bitwise AND operation between R2 and R4, saving the result in R6             | `32'h0040e433`       | `32'h0240a400`       |
+| **OR R7, R3, R5**     | Combines the bits of R3 and R5 using the OR operation, writing the output to R7         | `32'h005174b3`       | `32'h02513480`       |
+| **XOR R8, R2, R4**    | Performs an XOR operation on the values in R2 and R4, storing the result in R8          | `32'h0040c633`       | `32'h0240c500`       |
+| **SLT R2, R3, R5**    | Sets R2 to 1 if the value in R3 is smaller than R5, otherwise stores 0                  | `32'h00516133`       | `32'h02516580`       |
+| **ADDI R10, R5, 8**   | Adds the immediate value 8 to the contents of R5 and stores the result in R10           | `32'h00512033`       | `32'h00820500`       |
+| **BEQ R0, R0, 12**    | Compares R0 with R0, and if they are equal, branches to a target offset of 12           | `32'h00000c63`       | `32'h00c00002`       |
+| **SW R2, R6, 4**      | Saves the value in R2 to the memory location calculated as R6 plus an offset of 4       | `32'h0020a223`       | `32'h00409281`       |
+| **LW R9, R6, 4**      | Loads a word from memory at address (R6 + 4) into the R9 register                       | `32'h0040a683`       | `32'h00408681`       |
+| **SRL R10, R8, R2**   | Shifts the bits in R8 right by the amount specified in R2, and stores the result in R10 | `32'h0020c293`       | `32'h0028a203`       |
+| **SLL R11, R2, R3**   | Shifts the bits in R2 left by the value in R3, placing the result in R11                | `32'h003091b3`       | `32'h00308783`       |
+
 
 
 Viewing the Output waveforms of the instructions in GTKWave :
@@ -511,9 +532,10 @@ Viewing the Output waveforms of the instructions in GTKWave :
 
 5. XOR R10,R1,R4
 
-![inst5-XOR](https://github.com/user-attachments/assets/7c972e65-f834-4873-b1dc-05b4ba230c2f)
+![inst5-XOR](https://github.com/user-attachments/assets/05c49a20-b0de-4097-ba4d-1c7aa1552c17)
 
 6. SLT R1,R2,R4
+The SLT (Set on Less Than) instruction is an R-Type instruction in RISC-V assembly language, used to compare two registers and set a destination register to 1 if the first source register is less than the second source register. Otherwise, the destination register is set to 0.
 
 ![inst6-SLT](https://github.com/user-attachments/assets/428bd51d-478f-4cf4-a712-80878ad2f8dc)
 
@@ -521,12 +543,15 @@ Viewing the Output waveforms of the instructions in GTKWave :
 
 ![inst7-ADDI](https://github.com/user-attachments/assets/2c1f3a63-e42a-4f80-8f49-e66f7801a0a8)
 
-8. 
+8. SW R3,R1,2
+The SW (Store Word) instruction stores a 32-bit word from a source register into a memory address calculated as the sum of a base register and an immediate offset.
 
+9. SRL R16,R11,R2
+The SRL (Shift Right Logical) instruction shifts the value in a source register to the right by a specified number of bits, filling the vacated bits with zeros.
 
+10. BEQ R0, R0, 15
 
+11. BNE R0, R1, 20
 
-
-
-
- 
+12. SLL R15, R1, R2
+he SLL (Shift Left Logical) instruction shifts the value in a source register to the left by a specified number of bits, filling the vacated bits with zeros.

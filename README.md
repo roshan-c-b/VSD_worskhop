@@ -459,7 +459,7 @@ Finally, the address ```10104``` returns the final output.
 <br>
 In this task, we will be observing output waveforms of RISC-V instructions by performing functional simulations using a verilog netlist .
  
-***Software : iverilog, GTKWave
+**Software : iverilog, GTKWave
 
 Command to install iverliog and GTKWave:-
 ```
@@ -468,24 +468,24 @@ $ sudo apt install iverilog gtkwave
 ```
 Follow the following steps to perform the simulation:
 -
-***1. Create a directory with the command:-
+**1. Create a directory with the command:-
 ```
 mkdir <name>
 ```
-***2. create 2 files with the ```touch``` command as ```name_rv32i.v``` and ```name_rv32i_tb.v``` for verilog netlist and testbench code respectively.
+**2. create 2 files with the ```touch``` command as ```name_rv32i.v``` and ```name_rv32i_tb.v``` for verilog netlist and testbench code respectively.
 
 We will not be writing the verilog codes, we shall take it from the following reference github repository.
 Github repository: [iiitb_rv32i](https://github.com/vinayrayapati/rv32i/)* 
 
 
-***3. After getting the verilog codes and saving them, we can now simulate and verify.
+**3. After getting the verilog codes and saving them, we can now simulate and verify.
 Use the following code:-
 ```
 $ iverilog -o name_rv32i name_rv32i.v name_rv32i_tb.v
 ```
 After the above command is run, it will create ```iiitb_rv32i.vcd``` file.
 
-***4. Now we shall open GTKWave with the above generated file, and view the output waveforms 
+**4. Now we shall open GTKWave with the above generated file, and view the output waveforms 
 
 Command for opening GTKWave:
 ```

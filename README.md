@@ -571,7 +571,7 @@ The BNE (Branch if Not Equal) instruction in RISC-V compares two registers; if t
 
 The new PC value is = 10 + 15 = 25 (0x19)
 
-12. SLL R15, R1, R2
+12. SLL R15, R1, R2: 
 The SLL (Shift Left Logical) instruction shifts the value in a source register to the left by a specified number of bits, filling the vacated bits with zeros.
 
 ![Inst12-SLL](https://github.com/user-attachments/assets/a80def9a-4553-44bb-9c5e-31c85c8f5eb0)

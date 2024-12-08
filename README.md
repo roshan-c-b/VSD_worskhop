@@ -459,7 +459,7 @@ Finally, the address ```10104``` returns the final output.
 <br>
 In this task, we will be observing output waveforms of RISC-V instructions by performing functional simulations using a verilog netlist .
  
-**Software : iverilog, GTKWave
+**Software** : iverilog, GTKWave
 
 Command to install iverliog and GTKWave:-
 ```

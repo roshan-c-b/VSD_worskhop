@@ -457,6 +457,9 @@ Finally, the address ```10104``` returns the final output.
 <details>
 <summary><b>Task 4:</b> Simulation of RISC-V Code Verilog netlist and Testbench </summary>   
 <br>
+In this task, we will be observing output waveforms of RISC-V instructions by performing functional simulations using a verilog netlist.
+ 
+***Software : iverilog, GTKWave
 
 Command to install iverliog and GTKWave:-
 ```
@@ -465,24 +468,24 @@ $ sudo apt install iverilog gtkwave
 ```
 Follow the following steps to perform the simulation:
 -
-Step-1. Create a directory with the command:-
+***1. Create a directory with the command:-
 ```
 mkdir <name>
 ```
-Step-2. create 2 files with the ```touch``` command as ```name_rv32i.v``` and ```name_rv32i_tb.v``` for verilog netlist and testbench code respectively.
+***2. create 2 files with the ```touch``` command as ```name_rv32i.v``` and ```name_rv32i_tb.v``` for verilog netlist and testbench code respectively.
 
 We will not be writing the verilog codes, we shall take it from the following reference github repository.
 Github repository: [iiitb_rv32i](https://github.com/vinayrayapati/rv32i/)* 
 
 
-Step-3. After getting the verilog codes and saving them, we can now simulate and verify.
+***3. After getting the verilog codes and saving them, we can now simulate and verify.
 Use the following code:-
 ```
 $ iverilog -o name_rv32i name_rv32i.v name_rv32i_tb.v
 ```
 After the above command is run, it will create ```iiitb_rv32i.vcd``` file.
 
-Step-4. Now we shall open GTKWave with the above generated file, and view the output waveforms 
+***4. Now we shall open GTKWave with the above generated file, and view the output waveforms 
 
 Command for opening GTKWave:
 ```
@@ -546,12 +549,28 @@ The SLT (Set on Less Than) instruction is an R-Type instruction in RISC-V assemb
 8.### SW R3,R1,2
 The SW (Store Word) instruction stores a 32-bit word from a source register into a memory address calculated as the sum of a base register and an immediate offset.
 
+![inst8-SW](https://github.com/user-attachments/assets/3b2f8b35-5255-4ccd-ba43-b7b86f59e87f)
+
+
 9.### SRL R16,R11,R2
 The SRL (Shift Right Logical) instruction shifts the value in a source register to the right by a specified number of bits, filling the vacated bits with zeros.
 
+![inst9-SRL](https://github.com/user-attachments/assets/f9b69424-72b1-4abf-9764-1b049aeae6f9)
+
 10.### BEQ R0, R0, 15
+The BEQ (Branch if Equal) instruction in RISC-V compares two registers; if their values are equal, it updates the Program Counter (PC) to branch to a specified offset. Otherwise, the PC increments to the next sequential instruction.
+
+![inst10-BEQ](https://github.com/user-attachments/assets/46c4ff6a-f9c2-4fe8-a65f-b87a8e8039da)
+
+The new PC value is: 10 + 15 = 25 (0x19)
 
 11.### BNE R0, R1, 20
 
+![inst11-BNE](https://github.com/user-attachments/assets/c7561294-4fa1-4edc-9906-cf549092640b)
+
 12.### SLL R15, R1, R2
 The SLL (Shift Left Logical) instruction shifts the value in a source register to the left by a specified number of bits, filling the vacated bits with zeros.
+
+![Inst12-SLL](https://github.com/user-attachments/assets/a80def9a-4553-44bb-9c5e-31c85c8f5eb0)
+
+

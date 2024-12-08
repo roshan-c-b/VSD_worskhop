@@ -537,7 +537,7 @@ Viewing the Output waveforms of the instructions in GTKWave :
 
 ![inst5-XOR](https://github.com/user-attachments/assets/05c49a20-b0de-4097-ba4d-1c7aa1552c17)
 
-6. SLT R1,R2,R4
+6. SLT R1,R2,R4 : 
 The SLT (Set on Less Than) instruction is an R-Type instruction in RISC-V assembly language, used to compare two registers and set a destination register to 1 if the first source register is less than the second source register. Otherwise, the destination register is set to 0.
 
 ![inst6-SLT](https://github.com/user-attachments/assets/428bd51d-478f-4cf4-a712-80878ad2f8dc)
@@ -546,13 +546,13 @@ The SLT (Set on Less Than) instruction is an R-Type instruction in RISC-V assemb
 
 ![inst7-ADDI](https://github.com/user-attachments/assets/2c1f3a63-e42a-4f80-8f49-e66f7801a0a8)
 
-8. SW R3,R1,2
+8. SW R3,R1,2 : 
 The SW (Store Word) instruction stores a 32-bit word from a source register into a memory address calculated as the sum of a base register and an immediate offset.
 
 ![inst8-SW](https://github.com/user-attachments/assets/3b2f8b35-5255-4ccd-ba43-b7b86f59e87f)
 
 
-9. SRL R16,R11,R2
+9. SRL R16,R11,R2: 
 The SRL (Shift Right Logical) instruction shifts the value in a source register to the right by a specified number of bits, filling the vacated bits with zeros.
 
 ![inst9-SRL](https://github.com/user-attachments/assets/f9b69424-72b1-4abf-9764-1b049aeae6f9)
@@ -564,9 +564,12 @@ The BEQ (Branch if Equal) instruction in RISC-V compares two registers; if their
 
 The new PC value is: 10 + 15 = 25 (0x19)
 
-11. BNE R0, R1, 20
+11. BNE R0, R1, 20 :
+The BNE (Branch if Not Equal) instruction in RISC-V compares two registers; if their values are not equal, it updates the Program Counter (PC) to branch to a specified offset. Otherwise, the PC increments to the next sequential instruction.
 
 ![inst11-BNE](https://github.com/user-attachments/assets/c7561294-4fa1-4edc-9906-cf549092640b)
+
+The new PC value is = 10 + 15 = 25 (0x19)
 
 12. SLL R15, R1, R2
 The SLL (Shift Left Logical) instruction shifts the value in a source register to the left by a specified number of bits, filling the vacated bits with zeros.

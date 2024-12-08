@@ -455,9 +455,9 @@ Finally, the address ```10104``` returns the final output.
 </details>
 
 <details>
-<summary><b>Task 4:</b> Simulation of RISC-V Code Verilog netlist and Testbench </summary>   
+<summary><b>Task 4:</b> Simulating and Viewing the RISC-V core instructions using Verilog netlist and testbench </summary>   
 <br>
-In this task, we will be observing output waveforms of RISC-V instructions by performing functional simulations using a verilog netlist.
+In this task, we will be observing output waveforms of RISC-V instructions by performing functional simulations using a verilog netlist .
  
 ***Software : iverilog, GTKWave
 
@@ -517,58 +517,58 @@ The following table explains the instructions in detail and the shows difference
 Viewing the Output waveforms of the instructions in GTKWave :
 --
 
-1.### ADD R6,R2,R1
+###1. ADD R6,R2,R1
 
 ![inst-1](https://github.com/user-attachments/assets/b620b73f-b2fd-450a-8be4-47c30f9bbb09)
 
-2.### SUB R7,R1,R2
+###2. SUB R7,R1,R2
 
 ![inst2-sub](https://github.com/user-attachments/assets/e4053e9c-6f78-4180-b15e-c699f6e81b2a)
 
-3.### AND R8,R1,R3
+###3. AND R8,R1,R3
 
 ![inst3-AND](https://github.com/user-attachments/assets/0d277649-7941-4f31-bf0a-6693fff7472c)
 
-4.### OR R9,R2,R5
+###4. OR R9,R2,R5
 
 ![inst4-OR](https://github.com/user-attachments/assets/50a69faf-d96e-4241-8290-39f239262ffe)
 
-5.### XOR R10,R1,R4
+###5. XOR R10,R1,R4
 
 ![inst5-XOR](https://github.com/user-attachments/assets/05c49a20-b0de-4097-ba4d-1c7aa1552c17)
 
-6.### SLT R1,R2,R4
+###6. SLT R1,R2,R4
 The SLT (Set on Less Than) instruction is an R-Type instruction in RISC-V assembly language, used to compare two registers and set a destination register to 1 if the first source register is less than the second source register. Otherwise, the destination register is set to 0.
 
 ![inst6-SLT](https://github.com/user-attachments/assets/428bd51d-478f-4cf4-a712-80878ad2f8dc)
 
-7.### ADDI R12,R4,5
+###7. ADDI R12,R4,5
 
 ![inst7-ADDI](https://github.com/user-attachments/assets/2c1f3a63-e42a-4f80-8f49-e66f7801a0a8)
 
-8.### SW R3,R1,2
+###8. SW R3,R1,2
 The SW (Store Word) instruction stores a 32-bit word from a source register into a memory address calculated as the sum of a base register and an immediate offset.
 
 ![inst8-SW](https://github.com/user-attachments/assets/3b2f8b35-5255-4ccd-ba43-b7b86f59e87f)
 
 
-9.### SRL R16,R11,R2
+###9. SRL R16,R11,R2
 The SRL (Shift Right Logical) instruction shifts the value in a source register to the right by a specified number of bits, filling the vacated bits with zeros.
 
 ![inst9-SRL](https://github.com/user-attachments/assets/f9b69424-72b1-4abf-9764-1b049aeae6f9)
 
-10.### BEQ R0, R0, 15
+###10. BEQ R0, R0, 15
 The BEQ (Branch if Equal) instruction in RISC-V compares two registers; if their values are equal, it updates the Program Counter (PC) to branch to a specified offset. Otherwise, the PC increments to the next sequential instruction.
 
 ![inst10-BEQ](https://github.com/user-attachments/assets/46c4ff6a-f9c2-4fe8-a65f-b87a8e8039da)
 
 The new PC value is: 10 + 15 = 25 (0x19)
 
-11.### BNE R0, R1, 20
+###11. BNE R0, R1, 20
 
 ![inst11-BNE](https://github.com/user-attachments/assets/c7561294-4fa1-4edc-9906-cf549092640b)
 
-12.### SLL R15, R1, R2
+###12. SLL R15, R1, R2
 The SLL (Shift Left Logical) instruction shifts the value in a source register to the left by a specified number of bits, filling the vacated bits with zeros.
 
 ![Inst12-SLL](https://github.com/user-attachments/assets/a80def9a-4553-44bb-9c5e-31c85c8f5eb0)

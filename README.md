@@ -575,5 +575,30 @@ The new PC value is = 10 + 15 = 25 (0x19)
 The SLL (Shift Left Logical) instruction shifts the value in a source register to the left by a specified number of bits, filling the vacated bits with zeros.
 
 ![Inst12-SLL](https://github.com/user-attachments/assets/a80def9a-4553-44bb-9c5e-31c85c8f5eb0)
+</details>
+
+
+<details>
+<summary><b>Task 5:</b>Implementing Simple ALU using VSDSquadron Mini</summary>  
+  
+### **Overview**  
+
+This project involves the implementation of a Basic ALU Unit that performs addition, subtraction, multiplication, and division without the need for explicit control signals. Using a RISC-V-based SoC development kit, the ALU operates on user given inputs, showcasing how arithmetic operations can be implemented and executed in embedded systems. The goal is to simulate and execute all operations sequentially, demonstrating the practical application of RISC-V architecture in performing multiple arithmetic computations. 
+  
+### **Components Required**  
+* VSDSquadron Mini  
+* I2C LCD DISPLAY(16*2)
+* 4*4 MATRIX KEYPAD
+* Jumper Wires   
+* Breadboard
+* VS Code for Software Development  
+* PlatformIO multi framework professional IDE  
+  
+###**Board being uses:-**
+![board](https://github.com/user-attachments/assets/0f354f5a-03d5-417c-9df4-4c5dc3ff019a)
+
+
+### **Circuit Diagram**
+![connections](https://github.com/user-attachments/assets/ea29ba09-19da-4426-a4d8-08b26c563a2e)
 
 

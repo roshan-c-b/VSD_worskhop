@@ -583,9 +583,7 @@ The SLL (Shift Left Logical) instruction shifts the value in a source register t
   
 ## **Overview**  
 
-This project focuses on implementing a Basic Arithmetic Logic Unit (ALU) capable of performing addition, subtraction, multiplication, and division operations. Designed using a RISC-V-based SoC development kit, the ALU takes two user-provided inputs and sequentially computes the corresponding sum, difference, product, and quotient of the numbers.
-
-The implementation showcases the practical application of RISC-V architecture in embedded systems by simulating and executing all operations without requiring additional control signals.
+This project focuses on implementing a Basic Arithmetic Logic Unit (ALU) capable of performing addition, subtraction, multiplication, and division operations. Designed using a RISC-V-based SoC development kit, the ALU takes two user-provided inputs and sequentially computes the corresponding sum, difference, product, and quotient of the numbers, without requiring additional control signals.
   
 ## **Components Required**  
 * VSDSquadron Mini  
@@ -601,7 +599,7 @@ The implementation showcases the practical application of RISC-V architecture in
 
 
 ## **Circuit Diagram**
-![connections](https://github.com/user-attachments/assets/ea29ba09-19da-4426-a4d8-08b26c563a2e)
+![connections](https://github.com/user-attachments/assets/3992e617-bc43-4d72-a6ab-b7d0c9e06c90)
 
 ## Hardware connections:
 

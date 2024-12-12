@@ -594,7 +594,7 @@ This project involves the implementation of a Basic ALU Unit that performs addit
 * VS Code for Software Development  
 * PlatformIO multi framework professional IDE  
   
-##**Board being used:-**
+## **Board being used:-**
 ![board](https://github.com/user-attachments/assets/0f354f5a-03d5-417c-9df4-4c5dc3ff019a)
 
 

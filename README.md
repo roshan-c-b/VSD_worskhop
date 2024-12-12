@@ -581,11 +581,11 @@ The SLL (Shift Left Logical) instruction shifts the value in a source register t
 <details>
 <summary><b>Task 5:</b>Implementing Simple ALU using VSDSquadron Mini</summary>  
   
-### **Overview**  
+## **Overview**  
 
 This project involves the implementation of a Basic ALU Unit that performs addition, subtraction, multiplication, and division without the need for explicit control signals. Using a RISC-V-based SoC development kit, the ALU operates on user given inputs, showcasing how arithmetic operations can be implemented and executed in embedded systems. The goal is to simulate and execute all operations sequentially, demonstrating the practical application of RISC-V architecture in performing multiple arithmetic computations. 
   
-### **Components Required**  
+## **Components Required**  
 * VSDSquadron Mini  
 * I2C LCD DISPLAY(16*2)
 * 4*4 MATRIX KEYPAD
@@ -594,11 +594,36 @@ This project involves the implementation of a Basic ALU Unit that performs addit
 * VS Code for Software Development  
 * PlatformIO multi framework professional IDE  
   
-###**Board being uses:-**
+##**Board being used:-**
 ![board](https://github.com/user-attachments/assets/0f354f5a-03d5-417c-9df4-4c5dc3ff019a)
 
 
-### **Circuit Diagram**
+## **Circuit Diagram**
 ![connections](https://github.com/user-attachments/assets/ea29ba09-19da-4426-a4d8-08b26c563a2e)
+
+## Hardware connections:
+
+### I2C LCD :
+
+| **LCD Pin** | **Description**       | **VSD Squadron Mini Pin** | **Board Connection** |
+|-------------|-----------------------|----------------------------|-----------------------|
+| **GND**     | Ground                | GND                        | Common Ground         |
+| **VCC**     | Power Supply (+5V)    | 5V                         | 5V Power Rail         |
+| **SDA**     | Serial Data Line (I2C)| PC6                        | I2C Data (SDA)        |
+| **SCL**     | Serial Clock Line (I2C)| PC5                       | I2C Clock (SCL)       |
+
+### 4x4 Keypad :
+
+| **Wire** | **Keypad Function** | **VSD Squadron Mini Pin** | **Description** |
+|----------|----------------------|---------------------------|------------------|
+| Wire 2   | Column 3            | PD1                       | Connected to Column 3 |
+| Wire 3   | Column 2            | PD2                       | Connected to Column 2 |
+| Wire 4   | Column 1            | PD3                       | Connected to Column 1 |
+| Wire 5   | Row 4               | PD4                       | Connected to Row 4    |
+| Wire 6   | Row 3               | PD6                       | Connected to Row 3    |
+| Wire 7   | Row 2               | PD7                       | Connected to Row 2    |
+| Wire 8   | Row 1               | PA1                       | Connected to Row 1    |
+
+
 
 
